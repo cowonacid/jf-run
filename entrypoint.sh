@@ -1,10 +1,9 @@
 #!/bin/bash
 
-FILE="Jenkinsfile"
 
-JENKINSFILE=`cat $1`
+JENKINSFILE=`cat /Jenkinsfile`
 
-cat <<EOT >> Jenkinsfile.groovy
+cat <<EOT >> /Jenkinsfile.groovy
 #!/usr/bin/env groovy
 
 import static Constants.*
@@ -49,8 +48,10 @@ def stage (stageName){
 $JENKINSFILE
 EOT
 
-chmod +x $1.groovy
+chmod +x /Jenkinsfile.groovy
 
-./$1.groovy
+cat /Jenkinsfile.groovy
 
-rm -f $1.groovy
+#./$1.groovy
+
+#rm -f $1.groovy
