@@ -16,21 +16,17 @@ def node(Closure c){
     c.call()
 }
 
-# def sh(cmd) {
-#     ProcessBuilder builder = new ProcessBuilder( cmd.split(' ') )
-#     builder.redirectErrorStream(true)
-#     Process process = builder.start()
-    
-#     InputStream stdout = process.getInputStream ()
-#     BufferedReader reader = new BufferedReader (new InputStreamReader(stdout))
-    
-#     while ((line = reader.readLine ()) != null) {
-#         System.out.println (line)
-#     }
-# }
-
 def sh(cmd) {
-
+    ProcessBuilder builder = new ProcessBuilder( cmd.split(' ') )
+    builder.redirectErrorStream(true)
+    Process process = builder.start()
+    
+    InputStream stdout = process.getInputStream ()
+    BufferedReader reader = new BufferedReader (new InputStreamReader(stdout))
+    
+    while ((line = reader.readLine ()) != null) {
+        System.out.println (line)
+    }
 }
 
 def checkout (scm) {
